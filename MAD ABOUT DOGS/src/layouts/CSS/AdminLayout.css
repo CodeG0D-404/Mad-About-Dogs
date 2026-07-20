@@ -1,0 +1,19 @@
+.admin-layout {
+  min-height: 100vh;
+}
+
+.admin-content {
+  margin-left: 260px;
+
+  min-height: 100vh;
+
+  padding: 30px;
+
+  background: #f5f7fa;
+
+  transition: margin-left 0.25s ease;
+}
+
+.admin-content.collapsed {
+  margin-left: 80px;
+}

@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+  --app-header-space: 80px;
+  --app-mobile-footer-space: 0px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #fff;
+  color: #0b1f3a;
+  overflow-x: hidden;
+}
+
+main {
+  padding-top: var(--app-header-space);
+  padding-bottom: var(--app-mobile-footer-space);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (max-width: 992px) {
+  :root {
+    --app-header-space: 68px;
+    --app-mobile-footer-space: calc(86px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --app-header-space: 64px;
+    --app-mobile-footer-space: calc(82px + env(safe-area-inset-bottom, 0px));
+  }
+}

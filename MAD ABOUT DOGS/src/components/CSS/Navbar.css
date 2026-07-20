@@ -1,0 +1,458 @@
+/* ==========================================
+   GOOGLE FONT
+========================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+
+  z-index: 1000;
+
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.35s ease,
+    height 0.3s ease,
+    box-shadow 0.3s ease;
+
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar.show {
+  transform: translateY(0);
+}
+
+.navbar.hide {
+  transform: translateY(-110%);
+}
+
+.navbar.shrink {
+  height: 65px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+
+  height: 100%;
+
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 62px;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+.navbar.shrink .logo img {
+  height: 50px;
+}
+
+/* ==========================================
+   NAV LINKS
+========================================== */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a,
+.nav-links button {
+  text-decoration: none;
+  background: none;
+  border: none;
+
+  color: #3f2a1d;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links button:hover {
+  color: #f59e0b;
+}
+
+/* ==========================================
+   DROPDOWN
+========================================== */
+
+.dropdown-menu {
+  position: absolute;
+
+  top: 130%;
+  left: 0;
+
+  min-width: 220px;
+
+  background: #ffffff;
+
+  border-radius: 14px;
+
+  padding: 10px 0;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.08);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(10px);
+
+  transition: all 0.25s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  display: block;
+
+  padding: 12px 18px;
+
+  color: #444;
+
+  font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+  background: #fff7ed;
+  color: #f59e0b;
+}
+
+/* ==========================================
+   CTA BUTTON
+========================================== */
+
+.book-btn {
+  text-decoration: none;
+
+  background: #f59e0b;
+  color: white;
+
+  padding: 12px 24px;
+
+  border-radius: 999px;
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   HAMBURGER
+========================================== */
+
+.hamburger {
+  display: none;
+
+  flex-direction: column;
+  gap: 5px;
+
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 2px;
+
+  background: #3f2a1d;
+
+  transition: 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
+
+/* ==========================================
+   MOBILE BOOK BUTTON
+========================================== */
+
+.mobile-book-btn {
+  display: none;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 992px) {
+  .navbar {
+    height: 68px;
+  }
+
+  .navbar.shrink {
+    height: 58px;
+  }
+
+  .navbar-container {
+    padding: 0 18px;
+  }
+
+  .logo img {
+    height: 52px;
+  }
+
+  .navbar.shrink .logo img {
+    height: 44px;
+  }
+
+  .hamburger {
+    display: flex;
+    gap: 4px;
+    padding: 8px;
+    margin-right: -8px;
+  }
+
+  .hamburger span {
+    width: 23px;
+  }
+
+  .book-btn {
+    display: none;
+  }
+
+  .mobile-book-btn {
+    display: block;
+    width: 100%;
+  }
+
+  .mobile-book-btn a {
+    display: block;
+
+    text-align: center;
+
+    background: #f59e0b;
+    color: white !important;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    margin-top: 4px;
+  }
+
+  .nav-links {
+    position: absolute;
+
+    top: 68px;
+    left: 12px;
+
+    width: calc(100% - 24px);
+
+    background: rgba(255, 255, 255, 0.98);
+
+    backdrop-filter: blur(14px);
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 12px;
+
+    gap: 4px;
+
+    border: 1px solid rgba(245, 158, 11, 0.12);
+    border-radius: 18px;
+
+    box-shadow:
+      0 16px 36px rgba(63, 42, 29, 0.12);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transform: translateY(-15px);
+
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a,
+  .nav-links button {
+    display: block;
+    width: 100%;
+
+    text-align: left;
+
+    padding: 10px 12px;
+    border-radius: 10px;
+  }
+
+  .nav-links a:hover,
+  .nav-links button:hover {
+    background: #fff7ed;
+  }
+
+  .dropdown-menu {
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    min-width: 100%;
+
+    margin-top: 4px;
+
+    box-shadow: none;
+
+    border-radius: 12px;
+
+    background: #fff7ed;
+
+    display: none;
+
+    opacity: 1;
+    visibility: visible;
+
+    transform: none;
+  }
+
+  .dropdown-menu a {
+    padding: 10px 12px;
+  }
+
+  .dropdown-menu.show {
+    display: block;
+  }
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+}
+
+/* ==========================================
+   SMALL DEVICES
+========================================== */
+
+@media (max-width: 576px) {
+  .navbar {
+    height: 64px;
+  }
+
+  .navbar.shrink {
+    height: 56px;
+  }
+
+  .navbar-container {
+    padding: 0 14px;
+  }
+
+  .logo img {
+    height: 48px;
+  }
+
+  .navbar.shrink .logo img {
+    height: 40px;
+  }
+
+  .nav-links {
+    top: 64px;
+    left: 9px;
+    width: calc(100% - 18px);
+  }
+
+  .mobile-book-btn a {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  background: #f59e0b;
+  color: white !important;
+
+  padding: 12px;
+
+  border-radius: 12px;
+
+  margin-top: 4px;
+
+  text-align: center;
+}
+}
